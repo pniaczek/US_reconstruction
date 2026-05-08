@@ -1,0 +1,11 @@
+numpy
+scipy
+h5py
+pydicom
+torch
+vtk
+napari
+pyqt5
+scikit-image
+matplotlib
+pyvista

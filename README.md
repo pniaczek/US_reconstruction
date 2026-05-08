@@ -41,6 +41,11 @@ vnn_usg_repo/
 │   └── prepare_dicom.py
 ├── reconstruction/
 │   └── bspline.py
+│   └── vnn_distance_weighted.py
+│   └── vnn.py
+│   └── vnn_mean.py
+│   └── runner.py
+│   └── common.py
 ├── isosurface_extraction/
 │   └── extract.py
 ├── visualization/
@@ -54,7 +59,7 @@ vnn_usg_repo/
 
 All control is done from `config.py`.
 
-### 1. Put raw cases here
+### 1. Put raw cases from PIUR
 
 ```text
 data/raw/001/
