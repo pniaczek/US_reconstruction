@@ -1,6 +1,6 @@
 # VNN USG Repository
 
-Minimal, modular repository for:
+repository for:
 - preparing DICOM cases,
 - reconstructing 3D ultrasound volumes,
 - extracting isosurfaces,
@@ -93,6 +93,7 @@ python main.py
 
 ## Notes
 
+- visualization module doesn't works on jupyter server - try it locally
 - `data_loading/prepare_dicom.py` converts DICOM data into H5 for reconstruction and NPZ for ground truth/visualization.
 - `reconstruction/bspline.py` contains your GPU-ready B-spline reconstruction.
 - `visualization/napari_viewer.py` shows reconstruction, ground truth, labels, per-class segmentations, and extracted surfaces only if they exist.

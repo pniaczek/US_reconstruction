@@ -18,10 +18,10 @@ GROUND_TRUTH_DIR = DATA_DIR / "ground_truth"
 # MAIN SWITCHES
 # ============================================================
 
-RUN_DATA_LOADING = False
+RUN_DATA_LOADING = True
 RUN_RECONSTRUCTION = True
 RUN_ISOSURFACE_EXTRACTION = False
-RUN_NAPARI_VIS = True
+RUN_NAPARI_VIS = False
 RUN_SIMPLE_VIS = False
 
 
