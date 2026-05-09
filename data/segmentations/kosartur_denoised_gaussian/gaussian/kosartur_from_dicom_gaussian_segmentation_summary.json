@@ -1,0 +1,18 @@
+{
+  "case_name": "kosartur_denoised_gaussian",
+  "output_case_name": "kosartur_denoised_gaussian_seg_gaussian",
+  "source_h5": "E:\\studia\\MAGISTERKA\\USG_RECONSTRUCTION\\vnn_usg_repo\\data\\for_reconstruction\\kosartur_denoised_gaussian\\kosartur_from_dicom_gaussian.h5",
+  "labels_npz": "E:\\studia\\MAGISTERKA\\USG_RECONSTRUCTION\\vnn_usg_repo\\data\\segmentations\\kosartur_denoised_gaussian\\gaussian\\kosartur_from_dicom_gaussian_labels.npz",
+  "classes_to_export": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "model_name": "gaussian",
+  "model_path": "E:\\studia\\MAGISTERKA\\USG_RECONSTRUCTION\\vnn_usg_repo\\models\\segmentation\\gaussian\\best_model_traced.pt",
+  "meta_path": "E:\\studia\\MAGISTERKA\\USG_RECONSTRUCTION\\vnn_usg_repo\\models\\segmentation\\gaussian\\best_model_export_meta.json",
+  "write_to_for_reconstruction": true,
+  "output_case_dir": "E:\\studia\\MAGISTERKA\\USG_RECONSTRUCTION\\vnn_usg_repo\\data\\for_reconstruction\\kosartur_denoised_gaussian_seg_gaussian"
+}

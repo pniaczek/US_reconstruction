@@ -1,0 +1,50 @@
+{
+  "variant_name": "rdpad",
+  "epoch": 79,
+  "best_score": 0.9228843908529863,
+  "files": {
+    "checkpoint": "/home/mpniak/projects/Segmentation_training/unet_training_outputs/rdpad/best_model.pt",
+    "full_pytorch_model": "/home/mpniak/projects/Segmentation_training/unet_training_outputs/rdpad/best_model_full.pt",
+    "torchscript_traced_model": "/home/mpniak/projects/Segmentation_training/unet_training_outputs/rdpad/best_model_traced.pt"
+  },
+  "input": {
+    "in_channels": 1,
+    "image_size": [
+      256,
+      256
+    ],
+    "example_trace_size": [
+      256,
+      256
+    ]
+  },
+  "output": {
+    "num_classes": 6,
+    "logits_shape_for_trace": [
+      1,
+      6,
+      256,
+      256
+    ]
+  },
+  "model": {
+    "base_channels": 32,
+    "dropout": 0.1
+  },
+  "label_mapping": {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5
+  },
+  "mask_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}
