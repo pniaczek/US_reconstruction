@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # ============================================================
 
 BEFORE_H5 = Path(r"data/for_reconstruction/kosartur/kosartur_from_dicom.h5")
-AFTER_H5 = Path(r"data/denoised/kosartur/tv/kosartur_from_dicom_tv.h5")
+AFTER_H5 = Path(r"data/denoised/kosartur/rdpad/kosartur_from_dicom_rdpad.h5")
 
 IMAGE_KEY = "img"
 

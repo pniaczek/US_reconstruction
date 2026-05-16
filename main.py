@@ -9,7 +9,6 @@ from config import (
     RUN_DATA_LOADING,
     RUN_DENOISING,
     RUN_SEGMENTATION,
-    RUN_UNSUPERVISED_SEGMENTATION,
     RUN_RECONSTRUCTION,
     RUN_ISOSURFACE_EXTRACTION,
     RUN_NAPARI_VIS,
@@ -21,7 +20,6 @@ from config import (
 from data_loading.prepare_dicom import prepare_cases
 from denoising.runner import denoise_cases
 from segmentation.runner import segment_cases
-from unsupervised_segmentation.runner import run_unsupervised_segmentation
 from reconstruction.runner import reconstruct_cases
 from isosurface_extraction.extract import extract_surfaces_for_cases
 from visualization.napari_viewer import visualize_case_napari
@@ -52,9 +50,6 @@ def main():
 
     if RUN_SEGMENTATION:
         segmentation_output_cases = segment_cases(case_names=CASE_NAMES)
-
-    if RUN_UNSUPERVISED_SEGMENTATION:
-        run_unsupervised_segmentation(case_names=CASE_NAMES)
 
     reconstruction_case_names = CASE_NAMES
 
