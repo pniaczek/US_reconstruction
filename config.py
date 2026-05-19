@@ -19,25 +19,21 @@ SEGMENTATION_MODELS_DIR = ROOT / "models" / "segmentation"
 
 
 
+
 # ============================================================
 # MAIN SWITCHES
 # ============================================================
 
-RUN_DATA_LOADING = False
+RUN_DATA_LOADING = True
 RUN_DENOISING = False
-
-# Supervised U-Net segmentation using your trained TorchScript models.
-RUN_SEGMENTATION = True
-
-# Nie rekonstruujemy ponownie — tylko oglądamy gotowe wyniki.
+RUN_SEGMENTATION = False
 RUN_RECONSTRUCTION = False
-
-# Do samego Napari nie potrzebujesz ekstrakcji izopowierzchni.
-# Włącz tylko jeśli chcesz najpierw wygenerować surfaces.
 RUN_ISOSURFACE_EXTRACTION = False
 
 RUN_NAPARI_VIS = False
 RUN_SIMPLE_VIS = False
+
+RUN_EVALUATION = False
 
 
 # ============================================================
@@ -49,7 +45,8 @@ RUN_SIMPLE_VIS = False
 #
 # Nie ustawiaj tutaj "kosartur_denoised_gaussian", bo to jest case wejściowy
 # przed segmentacją.
-CASE_NAMES = ["kosartur_denoised_rdpad_seg_rdpad"]
+
+CASE_NAMES = ["rybakszymon_3"]
 
 
 # ============================================================
@@ -65,18 +62,18 @@ IMAGE_DATASET_NAME = "img"
 POSE_DATASET_NAME = "poses"
 
 
+
 # ============================================================
 # DENOISING
 # ============================================================
 
 DENOISING_METHODS = [
-    "gaussian",
+    "rdpad",
 ]
 
 DENOISING_WRITE_BACK_TO_FOR_RECONSTRUCTION = True
 DENOISING_OUTPUT_CASE_SUFFIX = "_denoised"
 
-# RDPAD
 RDPAD_ITERATIONS = 100
 RDPAD_TIMESTEP = 0.20
 RDPAD_Q0_MODE = "median"
@@ -106,7 +103,11 @@ TV_MAX_NUM_ITER = 200
 # SUPERVISED SEGMENTATION
 # ============================================================
 
-SEGMENTATION_MODEL_NAME = "gaussian"
+# ============================================================
+# SUPERVISED SEGMENTATION
+# ============================================================
+
+SEGMENTATION_MODEL_NAME = "rdpad"
 
 SEGMENTATION_MODEL_FILE = "best_model_traced.pt"
 SEGMENTATION_MODEL_META_FILE = "best_model_export_meta.json"
@@ -216,3 +217,56 @@ SHOW_SEGMENTATION_CLASSES = True
 SHOW_SURFACES = True
 
 NAPARI_NDISPLAY = 3
+
+
+# ============================================================
+# EVALUATION
+# ============================================================
+
+RUN_EVALUATION = True
+
+RUN_EVAL_RECONSTRUCTION_WITH_GT = True
+RUN_EVAL_SEGMENTATION = True
+RUN_EVAL_NO_REFERENCE = True
+
+EVALUATION_DIR = DATA_DIR / "evaluation"
+
+EVAL_RECON_METHODS = RECONSTRUCTION_METHODS
+
+EVAL_GT_CASE_NAME_MAP = {
+    "kosartur_denoised_rdpad": "kosartur",
+    "kosartur_denoised_rdpad_seg_rdpad": "kosartur",
+
+    "kosartur_denoised_gaussian": "kosartur",
+    "kosartur_denoised_gaussian_seg_gaussian": "kosartur",
+
+    "kosartur_denoised_median": "kosartur",
+    "kosartur_denoised_median_seg_median": "kosartur",
+
+    "kosartur_denoised_bilateral": "kosartur",
+    "kosartur_denoised_bilateral_seg_bilateral": "kosartur",
+
+    "kosartur_denoised_tv": "kosartur",
+    "kosartur_denoised_tv_seg_tv": "kosartur",
+}
+
+EVAL_CASE_NAMES = [
+    "kosartur_denoised_rdpad",
+    "kosartur_denoised_rdpad_seg_rdpad",
+]
+
+EVAL_SEGMENTATION_MODEL_NAME = "rdpad"
+
+EVAL_SEGMENTATION_CLASSES = [1, 2, 3, 4, 5]
+
+EVAL_EPS = 1e-8
+EVAL_HIST_BINS = 128
+EVAL_SURFACE_DICE_TOLERANCE_MM = 1.0
+
+EVAL_OBJECT_THRESHOLD = 0.0
+EVAL_BACKGROUND_THRESHOLD = 0.0
+
+EVAL_SSIM_AXIS = 0
+EVAL_MS_SSIM_ENABLED = True
+
+EVAL_NO_REFERENCE_USE_MASK = True
