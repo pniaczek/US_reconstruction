@@ -1,0 +1,14 @@
+lightly
+torch
+torchvision
+wandb
+hydra-core
+omegaconf
+numpy
+Pillow
+matplotlib
+tqdm
+accelerate
+torchsummary
+torchinfo
+opencv-python-headless
